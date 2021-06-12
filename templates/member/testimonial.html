@@ -1,0 +1,49 @@
+{% extends 'user/memberbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+    
+<html>
+<head>
+
+</head>
+<body><br><br><br>
+<div class="container text-center" >
+
+  <form method="POST">
+    {%csrf_token%}
+    <br><br>
+    <p style="color: royalblue;font-size: 15pt;">Message Type</p>
+    <div>
+      <input type="radio" id="contactChoice1" name="messagetype" value="PRAYER">
+      <label for="Choice1">Prayer Request</label>
+      <input type="radio" id="contactChoice2" name="messagetype" value="TESTIMONIAL">
+      <label for="Choice2">Testimonial</label> 
+    </div>
+  
+    <br>
+  
+  
+    <p style="color: royalblue;font-size: 15pt;">Type Your Mesaage</p>
+    <div>
+        <textarea class="form-control" name="msg" id="" rows="3"></textarea>
+
+    </div>
+  
+    <br>
+  
+  
+  
+  
+    <div>
+      <button type="submit">Submit</input>
+    </div>
+  </form>
+
+</div>
+</body>
+</html>
+
+
+
+{% endblock content %}

@@ -1,0 +1,27 @@
+{% extends 'church/homebase.html' %}
+{% load widget_tweaks %}
+<!--content start-->
+ <div class="content">
+    <br><br><br><br><br>
+    {% block content %}
+<div style="margin-left:30%;margin-right:30%;" class="log-form">
+  <h2 class="text-center">LOGIN TO YOUR ACCOUNT</h2><br>
+  <form  class="text-center"  method="post">
+   {% csrf_token %}<br>
+     {% render_field  form.username class="form-control" placeholder="Username" %}
+     <br><br>
+    {% render_field form.password class="form-control" placeholder="Password" %}
+    <br><br>
+    <button type="submit" style="font-size: 17px;" class="btn primary text-center">Login</button><br><br><br>
+    
+    
+    
+  </form>
+</div><!--end log form -->
+    {% endblock content %}
+
+
+    <br><br><br>
+ 
+  </div>
+  <!--content end-->

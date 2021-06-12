@@ -1,0 +1,61 @@
+{% extends 'church/adminbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<br><br><br>
+
+<div class="container" style="font-size:15px;">
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Devotee</th>
+            <th scope="col">Service</th>
+            <th scope="col">Total Seat</th>
+            <th scope="col">Seat Number</th>
+            <th scope="col">Service Date</th>
+            <th scope="col">Booking Date</th>
+            <th scope="col">Download Ticket</th>
+          </tr>
+        </thead>
+        <tbody>
+         
+            
+            {% for t in bookings %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td> {{t.attendee}}</td>
+               
+                
+                <td>{{t.service}}</td>
+                <td>{{t.totalSeat}}</td>
+                <td>{{t.seatNumber}}</td>
+                <td>{{t.date}}</td>
+                <td>{{t.bookingDate}}</td>
+                <td><a href="{% url 'member-download-ticket' t.id  %}">Download</a></td>
+                
+
+            </tr>
+            {% endfor %}
+          
+
+        </tbody>
+      </table>
+
+</div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+
+
+
+
+{% endblock content %}

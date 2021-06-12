@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+	<meta charset="UTF-8">
+	<title>Welcome to His Grace Church</title>
+	<link rel="stylesheet" href="{% static "style1.css" %}">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+
+</head>
+
+
+
+<body>
+
+    <section id="home">
+        <header>
+            
+            <ul id="menu">
+              <a style="float: left;" href="/"><img src="{% static "images/LOGO_SMALL.png" %}" ></a>
+
+             
+
+              <li><a href="/logout" class="mm-links d-block">Logout</a></li>
+             
+              
+                <li><a href="/viewtestimonial" class="mm-links d-block">Testimonial</a></li>
+               
+                <li><a href="/member" class="mm-links d-block">Member</a></li>
+                <li><a href="/viewbookedservice">Booked Service</a> </li>
+                
+
+                
+                
+
+
+               
+                    <li><a href="/">Home</a></li>
+
+            </ul>
+        </header>
+        	<!--Automatic slider order-->
+
+    </section>
+    
+  <!--content start-->
+  <div class="content">
+    <br><br><br><br>
+    {% block content %}
+
+    {% endblock content %}
+
+
+    <br><br><br>
+ 
+  </div>
+  <!--content end-->
+
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends 'church/homebase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+    
+<html>
+<head>
+
+</head>
+<body><br>
+<div class="container text-center" >
+
+  <form method="POST">
+    {%csrf_token%}
+    <br><br>
+    <p>Your Name</p>
+    <div>
+      <input type="text" id="name" name="name" >
+    </div>
+  
+    <br>
+  
+  
+    <p>Email ID</p>
+    <div>
+      <input type="text" id="email" name="email" >
+    </div>
+  
+    <br>
+
+    <p>Your Message</p>
+    <div>
+      <input type="text" id="message" name="message" >
+    </div>
+  
+    <br>
+  
+    <div>
+      <button type="submit">Submit</input>
+    </div>
+  </form>
+
+</div>
+</body>
+</html>
+
+
+
+{% endblock content %}

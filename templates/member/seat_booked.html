@@ -1,0 +1,18 @@
+{% extends 'user/memberbase.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+</style>
+<br>
+<h3 class="text-center">Seat Booked Successfully</h3><br>
+<img style="width: 10%;height: 10%;" class="center" src="{% static "images/success.png" %}" alt="" ><br>
+<a class="center" style="text-decoration: none;margin-left: 41%;"  href="/downloadticket">Click here to download ticket</a>
+
+{% endblock content %}
