@@ -2,14 +2,14 @@
 <html lang="en">
 {% load static %}
 <head>
-	<meta charset="UTF-8">
-	<title>Welcome to His Grace Church</title>
-	<link rel="stylesheet" href="{% static "style1.css" %}">
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Welcome to His Grace Church</title>
+  <link rel="stylesheet" href="{% static "style1.css" %}">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 
@@ -25,20 +25,20 @@
                 
                 <li><a href="/userlogin">Member</a></li>
                 
-                <li><a href="#contact">Contact Us</a></li>
-                <li><a href="/aboutus">About</a></li>
+                <li><a href="/contactus">Contact Us</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#home">Home</a></li>
             </ul>
         </header>
-        	<!--Automatic slider order-->
-	<div class="slides"> 
-	  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-	    <!-- Indicators -->
-	    <ol class="carousel-indicators">
-	      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-	      <li data-target="#myCarousel" data-slide-to="1"></li>
-	      <li data-target="#myCarousel" data-slide-to="2"></li>
-	    </ol>
+          <!--Automatic slider order-->
+  <div class="slides"> 
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
@@ -73,14 +73,14 @@
     </section>
     
     <section id="about">
-    	<div class="banner">
-    		<img src="{% static "images/banner1.png" %}">
-    	</div>
+      <div class="banner">
+        <img src="{% static "images/banner1.png" %}">
+      </div>
     </section>
 
     <section id="contact">
-    	<div class="footer">
-    		<img src="{% static "images/footer.png" %}">
+      <div class="footer">
+        <img src="{% static "images/footer.png" %}">
     </section>
 </body>
 </html>

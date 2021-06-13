@@ -1,5 +1,4 @@
 {% extends 'user/memberbase.html' %}
-{% load widget_tweaks %}
 {% block content %}
 
 <head>
@@ -49,11 +48,14 @@
     h3{
         color:  #022998;
     }
+    a{
+        text-decoration: none;
+    }
     </style>
     </head>
     <body>
-    <br>
-    <h2 class="text-center" >Available Services</h2><br><br>
+    
+    <h2 class="text-center" >Book Services</h2><br><br>
     
     
     <div class="row" style="margin-left:10%;margin-right:10%;">
@@ -63,7 +65,8 @@
         <div class="card">
           <h3>Service Sunday</h3>
           <p>6:30 AM TO 9:00 AM </p>
-          <p>Shine your light in us, through us, and over us</p>
+          <p>Every Sunday </p><br>
+          <strong><a style="text-decoration: none;" href="/bookservicesunday">BOOK</a></strong>
         </div>
       </div>
       
@@ -71,7 +74,8 @@
         <div class="card">
           <h3>Midweek Bible Study</h3>
           <p>9:30 AM TO 11:30 AM </p>
-          <p>The steadfast love of the LORD never ceases; </p>
+          <p>Every Wednesday </p><br>
+          <strong><a style="text-decoration: none;"  href="/bookbiblestudy">BOOK</a></strong>
         </div>
       </div>
     </div>
