@@ -15,23 +15,30 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from church import views
+from django.contrib.auth.views import LogoutView,LoginView
 
 from . import index
 
 urlpatterns = [
-    #path('admin/', admin.site.urls),
-    path('',index.indexpage,name='indexpage'), #AYAW NYA! HAYS. KELANGAN ATA BLANK NA PAGE?
+    path('admin/', admin.site.urls),
+    #path('user/',include('user.urls')),
+    #path('',views.home_view,name=''), #lumabas na si sign up page after icomment yung below
+    path('',index.indexpage,name='indexpage'), #AYAW NYA! HAYS. KELANGAN ATA BLANK NA PAGE? ps: need lang pala naka indicate folder user or church/bja.html
     path('homebase',index.homebasepage,name='homebasepage'),
     path('memberbase',index.memberbasepage,name='memberbasepage'),
     path('adminbase',index.adminbasepage,name='adminbasepage'),
 
-    path('index',index.indexpage,name='indexpage'),
     path('aboutus',index.aboutuspage,name='aboutuspage'),
     path('contactus',index.contactuspage,name='contactuspage'),
     path('contactussuccess',index.contactussuccesspage,name='contactussuccesspage'),
+
     path('userlogin',index.userloginpage,name='userloginpage'),
+    #path('userlogin', LoginView.as_view(template_name='user/userlogin.html'),name='userlogin'),
+    #path('afterlogin', views.afterlogin_view,name='afterlogin'),
     path('devoteesignup',index.devoteesignuppage,name='devoteesignuppage'),
     path('devoteedashboard',index.devoteedashboardpage,name='devoteedashboardpage'),
+
     path('adminlogin',index.adminloginpage,name='adminloginpage'),
     path('admin_dashboard',index.admin_dashboardpage,name='admin_dashboardpage'),
 

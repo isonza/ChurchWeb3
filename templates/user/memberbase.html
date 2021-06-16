@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Welcome to His Grace Church</title>
-	<link rel="stylesheet" href="{% static "style1.css" %}">
+	<link rel="stylesheet" href="{% static "css/broad.css" %}">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -61,11 +61,9 @@
 
              
 
-              <li><a href="/logout" class="mm-links d-block">Logout</a></li>
-              <li><a href="/myprofile" class="mm-links d-block">My Profile</a></li>
-              
-                <li><a href="/testimonial" class="mm-links d-block">Testimonial</a></li>
-                <li><a href="/trackcovid" class="mm-links d-block">Covid</a></li>
+              <li><a href="{% url 'indexpage'%}" class="mm-links d-block" onclick="MemberLogout()">Logout</a></li>
+                <li><a href="{% url 'testimonialpage'%}" class="mm-links d-block">Prayer & Testimony</a></li>
+                <li><a href="{% url 'trackcovidpage'%}" class="mm-links d-block">Covid</a></li>
                 
                 
 
@@ -76,14 +74,14 @@
                 <li><a onclick="myFunction()" class="dropbtn mm-links d-block">Events</a>
                     <div class="dropdown">
                     <div id="myDropdown" class="dropdown-content">
-                        <a href="/availableservices">View Services</a>
+                        <a href="{% url 'availableservicespage'%}">View Services</a>
                         <hr>
-                        <a href="/bookservice">Book Service</a>
+                        <a href="{% url 'bookservicepage'%}">Book Service</a>
                         <hr>
-                        <a href="/bookedservice">Booked Service</a> 
+                        <a href="{% url 'bookedservicepage'%}">Booked Service</a> 
                         </div>>
                     </div></li>
-                    <li><a href="/">Home</a></li>
+                    <li><a href="{% url 'devoteedashboardpage'%}">Home</a></li>
 
             </ul>
         </header>
@@ -104,6 +102,7 @@
   </div>
   <!--content end-->
 
+  <script>function MemberLogout() {alert("You Successfully Log Out. God Bless.");}</script>
   <script>
     /* When the user clicks on the button, 
     toggle between hiding and showing the dropdown content */

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Welcome to His Grace Church</title>
-	<link rel="stylesheet" href="{% static "style1.css" %}">
+	<link rel="stylesheet" href="{% static "css/broad.css" %}">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -28,21 +28,13 @@
 
              
 
-              <li><a href="/logout" class="mm-links d-block">Logout</a></li>
+              <li><a href="{% url 'indexpage'%}" class="mm-links d-block" onclick="AdminLogout()">Logout</a></li>
              
               
-                <li><a href="/viewtestimonial" class="mm-links d-block">Testimonial</a></li>
+                <li><a href="#" class="mm-links d-block">Testimonial</a></li>
                
-                <li><a href="/member" class="mm-links d-block">Member</a></li>
-                <li><a href="/viewbookedservice">Booked Service</a> </li>
-                
-
-                
-                
-
-
-               
-                    <li><a href="/">Home</a></li>
+                <li><a href="#" class="mm-links d-block">Member</a></li>
+                <li><a href="#">Booked Service</a> </li>
 
             </ul>
         </header>
@@ -63,6 +55,6 @@
   </div>
   <!--content end-->
 
-
+  <script>function AdminLogout() {alert("You Successfully Log Out. God Bless.");}</script>
 </body>
 </html>

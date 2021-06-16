@@ -61,8 +61,8 @@
           </div>
     
     <br>
-        <button type="submit" style="font: 1em sans-serif;" class="btn btn-primary">Sign Up</button><br><br>
-         <a class="center" href="/userlogin">Already have an account ? Click here to login</a>
+        <button type="submit"><a href="{% url 'userloginpage'%}" style="color: white;">Sign Up</button><br><br>
+         <a class="center" href="{% url 'userloginpage'%}">Already have an account ? Click here to login</a>
       </form>
 
 {% endblock content %}

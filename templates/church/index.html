@@ -4,12 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <title>Welcome to His Grace Church</title>
-  <link rel="stylesheet" href="{% static "style1.css" %}">
+  <link rel="stylesheet" href="{% static "css/broad.css" %}">
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    p{
+      color: white;
+    }
+    body{
+      color: #064b97;
+    }
+    ul{
+      list-style-type:none;
+    }
+  </style>
 </head>
 
 
@@ -25,7 +36,7 @@
                 
                 <li><a href="/userlogin">Member</a></li>
                 
-                <li><a href="/contactus">Contact Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#home">Home</a></li>
             </ul>
@@ -78,9 +89,45 @@
       </div>
     </section>
 
-    <section id="contact">
+    <section style="background-color: #064b97;" id="contact">
+        <div class="container text-center">
+        
+          <form style="border-color: white; background-color: #064b97;" method="POST">
+            {%csrf_token%}
+            <br><br>
+            <p>Your Name</p>
+            <div>
+              <input type="text" id="name" name="name" >
+            </div>
+          
+            <br>
+          
+          
+            <p>Email ID</p>
+            <div>
+              <input type="text" id="email" name="email" >
+            </div>
+          
+            <br>
+        
+            <p>Your Message</p>
+            <div>
+              <textarea class="form-control" name="msg" id="" rows="10" type="text" name="message" ></textarea>
+            </div>
+            <br>
+          
+            <div>
+              <button style="background-color: white" type="submit" onclick="myFunction()"><a href="#" style="color:#064b97;">Submit</button>
+            </div>
+          </form>
+        </div>
+
+    
       <div class="footer">
         <img src="{% static "images/footer.png" %}">
     </section>
+
+    <script>function myFunction() {alert("Message was Sent. Check your Email for their Response. God Bless.");}</script>
+
 </body>
 </html>

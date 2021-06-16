@@ -13,19 +13,17 @@
             box-sizing: border-box;
         }
 
-        input[type=submit] {
+        button {
             width: 100%;
-            background-color: #4CAF50;
-            color: white;
-            
+            background-color: #064b97;
             margin: 8px 0;
             border: none;
             border-radius: 4px;
             cursor: pointer;
         }
 
-        input[type=submit]:hover {
-            background-color: #45a049;
+        button:hover {
+            background-color: #064b97;
         }
 
         .center {
@@ -54,7 +52,7 @@
             <form method="post">
                 {% csrf_token %}
                 <input id="date1" placeholder="MM/DD/YYYY" date-input name="booking_date" value="" />
-                <input type="submit" name="" value="Proceed" />
+                <button type="submit"><a href="{% url 'choose_seatpage'%}" style="color: white;">Proceed</button>
             </form>
         </div>
 

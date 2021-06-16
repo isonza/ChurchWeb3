@@ -1,7 +1,7 @@
 from django.contrib import admin
-from church.models import Booking, Covid, Testimonial
+from church.models import Booking, Covid, PrayerTestimony
 # Register your models here.
 
 admin.site.register(Booking)
 admin.site.register(Covid)
-admin.site.register(Testimonial)
+admin.site.register(PrayerTestimony)

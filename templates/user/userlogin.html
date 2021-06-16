@@ -1,23 +1,33 @@
 {% extends 'church/homebase.html' %}
-{% load widget_tweaks %}
-<!--content start-->
+{% load static %}
+<!--content start--CHANGED-->
+<html>
+<head>
+  <link rel="stylesheet" href="{% static "css/broad.css" %}">
+</head>
+<body>
  <div class="content">
     <br><br><br><br><br>
     {% block content %}
-<div style="margin-left:30%;margin-right:30%;" class="log-form">
   <h2 class="text-center">LOGIN TO YOUR ACCOUNT</h2><br>
-  <form  class="text-center"  method="post">
-   {% csrf_token %}<br>
-     {% render_field  form.username class="form-control" placeholder="Username" %}
-     <br><br>
-    {% render_field form.password class="form-control" placeholder="Password" %}
-    <br><br>
-    <button type="submit" style="font-size: 17px;" class="btn primary text-center">Login</button><br><br><br>
-    <!--<a href="/user/usersignup">Does not have account ? Click here to signup</a> change after-->
-    <a href="/user/signup">Does not have account ? Click here to signup</a>
-    
-  </form>
-</div><!--end log form -->
+    <form  class="text-center"  method="post">
+    {% csrf_token %}<br>
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <br>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+        <br><br>
+        <label for="psw"><b>Password</b></label>
+        <br>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+        <br><br>
+
+        <button type="submit"><a href="{% url 'devoteedashboardpage'%}" style="color: white;" onclick="MemberLogin()">Login</button><br><br><br>
+        <a href="{% url 'devoteesignuppage'%}">Does not have account ? Click here to signup</a>
+        
+      </div>
+    </form>
+    <!--end log form -->
     {% endblock content %}
 
 
@@ -25,5 +35,7 @@
  
   </div>
   <!--content end-->
-   
+  <script>function MemberLogin() {alert("You Successfully Log In. God Bless.");}</script>  
+  </body>
+</html>
  

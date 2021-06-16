@@ -24,7 +24,7 @@ class Covid(models.Model):
     def __str__(self):
         return self.status
 
-class Testimonial(models.Model):
+class PrayerTestimony(models.Model):
     devotee=models.ForeignKey(UMODEL.Devotee,on_delete=models.CASCADE,null=True)
     testimonial_or_prayer=models.CharField(max_length=20)
     message=models.CharField(max_length=200)
