@@ -1,0 +1,34 @@
+{% extends 'memberbase.html' %}
+{% load static %}
+{% block content %}
+
+
+<style media="screen">
+  body {
+    background-color:white
+  }
+</style>
+<br><br><br>
+  <h4 class="text-center" style="font-size: 35px;">My Profile</h4>
+
+<div style="padding-left:50px;" class="container">
+        <div class="col-sm-3 col-md-3">
+            <img src="{% static devotee.profile_pic.url %}"   alt="profile pic" class="img-rounded img-responsive" />
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <blockquote>
+                <p>Member Full Name: {{devotee.fullname}}</p> 
+                <p>Member Username: {{devotee.user}}</p> 
+                <p><i class="glyphicon glyphicon-map-marker"></i>{{devotee.address}}</p>
+                <p><i class="glyphicon glyphicon-phone"></i> {{devotee.mobile}}</p>
+                <p>{{devotee.email}}</p>
+            </blockquote>
+        </div>
+        
+        <div style="text-align: center;">
+          <a href="/edit-myprofile" style="color: white;"><button class="button">Edit Profile</button></a>
+        </div>
+</div>
+
+
+{% endblock content %}

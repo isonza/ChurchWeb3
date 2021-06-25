@@ -1,0 +1,74 @@
+{% extends 'memberbase.html' %}
+{% block content %}
+
+    
+<html>
+<head>
+
+</head>
+<body><br>
+<div class="container text-center" >
+
+  <form method="POST">
+    {%csrf_token%}
+    <br><br>
+    <p>Did you interacted with someone who has been confirmed with COVID-19?</p>
+    <div>
+      <input type="radio" id="contactChoice1" name="INTERACTION" value="YES">
+      <label for="Choice1">YES</label>
+      <input type="radio" id="contactChoice2" name="INTERACTION" value="NO">
+      <label for="Choice2">NO</label> 
+    </div>
+  
+    <br>
+  
+  
+    <p>Did you had cold, cough, fever, heavy breathing, diarrhea, lost of taste and smell, sudden rashes or sore throat in past 2 weeks?</p>
+    <div>
+      <input type="radio" id="contactChoice1" name="SYMPTOMS" value="YES">
+      <label for="Choice1">YES</label>
+      <input type="radio" id="contactChoice2" name="SYMPTOMS" value="NO">
+      <label for="Choice2">NO</label> 
+    </div>
+  
+    <br>
+  
+  
+    <p>Have you travelled outside the country in the past 14 days?</p>
+    <div>
+      <input type="radio" id="contactChoice1" name="TRAVEL" value="YES">
+      <label for="Choice1">YES</label>
+      <input type="radio" id="contactChoice2" name="TRAVEL" value="NO">
+      <label for="Choice2">NO</label> 
+    </div>
+  
+    <br>
+  
+    <p>Have you ever been to an area with high COVID-19 case count?</p>
+    <div>
+      <input type="radio" id="contactChoice1" name="AREA" value="YES">
+      <label for="Choice1">YES</label>
+      <input type="radio" id="contactChoice2" name="AREA" value="NO">
+      <label for="Choice2">NO</label> 
+    </div>
+  
+    <br>
+
+    <p>I authorize His Grace Church to retrieve and process the details I have provided herein in relation to the existing COVID-19 control protocol.<br>
+      I understand that my personal information is protected by law under the Data Privacy Act. <br>
+      I certify that all information provided in this form is correct and true.</p>
+    
+    <br>
+
+    <div>
+      <button type="submit" style="color: white;">Submit</input>
+    </div>
+  </form>
+
+</div>
+</body>
+</html>
+
+
+
+{% endblock content %}

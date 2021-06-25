@@ -1,0 +1,65 @@
+{% extends 'homebase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+{% load static %}
+    
+<html>
+<head>
+  <style>
+    p{
+      color: white;
+    }
+    h1{
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+<body style="background-color: #064b97;"><br>
+  <h1>Send Your Concern</h1>
+<div class="container text-center">
+  <form method="POST">
+    {%csrf_token%}
+    <br><br>
+    <p style="color: white">Your Name</p>
+    <div>
+      <input type="text" id="name" name="name" >
+    </div>
+  
+    <br>
+  
+  
+    <p>Email ID</p>
+    <div>
+      <input type="text" id="email" name="email" >
+    </div>
+  
+    <br>
+
+    <p>Your Message</p>
+    <div>
+      <input type="text" id="message" name="message" 
+      style= "height: 120px; width: 100%;">
+    </div>
+  
+    <br>
+  
+    <div>
+      <button type="submit" style="background-color:white;" onclick="MemberLogout()">Submit</button>
+    </div>
+  </form>
+
+</div>
+
+    <section id="contact">
+      <div class="footer">
+        <img src="{% static "images/footer.png" %}">
+    </section>
+
+    <script>function MemberLogout() {alert("Message sent. Please wait for their reply on your email account. God Bless.");}</script>
+  </body>
+</html>
+
+
+
+{% endblock content %}

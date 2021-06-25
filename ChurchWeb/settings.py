@@ -16,12 +16,13 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 #BASE_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-#TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
+TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
 STATIC_DIR=os.path.join(BASE_DIR,'static')
 #for uploaded files of user/member
-MEDIA_ROOT=os.path.join(BASE_DIR,'static')
-#MEDIA_URL = '/uploads/'
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'static/uploads')
+#MEDIA_ROOT=os.path.join(BASE_DIR,'static')
+MEDIA_URL = '/uploads/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/uploads')
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -133,7 +134,7 @@ STATICFILES_DIRS=[
 STATIC_DIR,
  ]
  
-#LOGIN_REDIRECT_URL='/afterlogin'
+LOGIN_REDIRECT_URL='/afterlogin'
  
  #for contact us give your gmail id and password
 EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'

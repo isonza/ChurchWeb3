@@ -1,0 +1,59 @@
+{% extends 'memberbase.html' %}
+{% load static %}
+{% block content %}
+
+<html>
+<body><br><br><br>
+  <h4 class="text-center" style="font-size: 35px;">Give and You Shall Receive</h4>
+  <p class="text-center">“Give, and it will be given to you.<br>A good measure, pressed down, shaken together<br>and running over, will be poured into your lap.<br>
+    For with the measure you use, it will be measured to you.”<br>
+    Luke 6:38 NIV</p>
+<div class="container text-center" >
+  <form method="POST">
+    {%csrf_token%}
+    <br><br>
+    <div style="float: left; padding-left: 150px;">
+      <p style="color: royalblue;font-size: 15pt;">Payment Details</p><br>
+      <p>Bank of the Philippine Islands<br> MacArthur Highway, Tabing Ilog, Dasmarinas, Cavite Branch<br>Zip Code 4114</p><br>
+      <p>Account Name: His Grace Church<br> Current Account No.:<br> 0643-1276-87<br>Swift Code: BOPIPHMM</p><br>
+    </div>
+    <div style="float: right; padding-right: 200px;">
+        <p style="color: royalblue;font-size: 15pt;">Gift Amount</p>
+        <div>
+            <input type="text" name="amount" id="" rows="3">
+        </div>
+        <br>
+        <p style="color: royalblue;font-size: 15pt;">Payment Method</p>
+        <div>
+          <input type="radio" id="donateChoice1" name="method" value="GCash">
+          <label for="Choice1">GCash</label>
+          <input type="radio" id="donateChoice2" name="method" value="Bank">
+          <label for="Choice2">Bank Transfer</label> 
+        <p style="color: royalblue;font-size: 15pt;">If payment method is GCash, </p>
+        <p style="color: royalblue;font-size:"><b>Input your Account Name & GCash number</b></p>
+        <div>
+            <input type="text" name="gcash" id="" rows="3">
+        </div>
+        <p style="color: royalblue;font-size: 15pt;">If payment method is Bank transfer, </p>
+        <p style="color: royalblue;font-size:"><b>Input Bank Account Name</b></p>
+        <div>
+            <input type="text" name="bank" id="" rows="3">
+        </div>
+        </div>
+        <br>
+      </div>
+
+    <div>
+      <button type="submit" style="color: white;" onclick="Sent()">Submit</input>
+    </div>
+  </form>
+
+</div>
+
+    <script>function Sent() {alert("Your Donation was Sent. God Bless.");}</script>
+</body>
+</html>
+
+
+
+{% endblock content %}

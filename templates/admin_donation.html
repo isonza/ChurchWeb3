@@ -1,0 +1,42 @@
+{% extends 'adminbase.html' %}
+{% block content %}
+{%load static%}
+<br><br>
+<div class="container">
+    <H4 class="text-center">RECEIVED DONATION</H4><br>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Devotee Name</th>
+                <th scope="col">Gift Amount</th>            
+                <th scope="col">Payment Method</th>
+                <th scope="col">Acount Name & Gcash Number</th>
+                <th scope="col">Bank Account Name</th>
+                <th class="text-right">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for t in donation %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td> {{t.devotee}}</td>
+                <td> {{t.amount}}</td>               
+                <td>{{t.payment_method}}</td>
+                <td>{{t.gcash_method}}</td>
+                <td>{{t.bank_method}}</td>
+                <td>{{t.date}}</td>
+                
+                <td class="text-right" style="float:center;">
+                    <button class="btn btn-danger badge-pill" style="width: 120px;"><a  style="text-decoration: none;color: white;" href="{% url 'delete-donation' t.id  %}">NOT VERIFIED</a> </button>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    
+    </table>
+</div>
+
+
+{% endblock content %}

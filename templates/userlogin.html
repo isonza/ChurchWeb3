@@ -1,0 +1,39 @@
+{% extends 'homebase.html' %}
+{% load static %}
+{% load widget_tweaks %}
+<!--content start--CHANGED-->
+<html>
+<head>
+  <link rel="stylesheet" href="{% static "css/broad.css" %}">
+</head>
+<body>
+ <div class="content">
+    <br><br><br><br><br>
+    {% block content %}
+  <h2 class="text-center">LOGIN TO YOUR ACCOUNT</h2><br>
+    <form  class="text-center"  method="post">
+    {% csrf_token %}<br>
+      <div class="container">
+        {% csrf_token %}<br>
+        {% render_field  form.username class="form-control" placeholder="Username" %}
+        <br><br>
+        {% render_field form.password class="form-control" placeholder="Password" %}
+        <br><br>
+
+        <button type="submit" style="color: white;" onclick="MemberLogin()">Login</button><br><br><br>
+        <a href="/usersignup">Does not have account ? Click here to signup</a>
+        
+      </div>
+    </form>
+    <!--end log form -->
+    {% endblock content %}
+
+
+    <br><br><br>
+ 
+  </div>
+  <!--content end-->
+  <script>function MemberLogin() {alert("You Successfully Log In. God Bless.");}</script>  
+  </body>
+</html>
+ 

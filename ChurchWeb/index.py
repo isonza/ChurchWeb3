@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+"""from django.http import HttpResponse
 from django.shortcuts import render
 
 #navbar and attention
@@ -108,3 +108,4 @@ def admin_memberpage(request):
 def admin_testimonialpage(request):
 		return render(request,'church/admin_testimonial.html')
 
+"""

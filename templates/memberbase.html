@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+	<meta charset="UTF-8">
+	<title>Welcome to His Grace Church</title>
+	<link rel="stylesheet" href="{% static "css/broad.css" %}">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #005eb1;
+  min-width: 180px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+
+.show {display: block;}
+
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+    <section id="home">
+        <header>
+            
+            <ul id="menu">
+              <a style="float: left;" href="/"><img src="{% static "images/LOGO_SMALL.png" %}" ></a>
+
+             
+
+                <li><a href="/logout" class="mm-links d-block" onclick="MemberLogout()">Logout</a></li>
+                <li><a href="/myprofile" class="mm-links d-block">My Profile</a></li>
+                <li><a href="/donate" class="mm-links d-block">Donate</a></li>
+                <li><a href="/testimonial" class="mm-links d-block">Prayer & Testimony</a></li>
+                <li><a href="/trackcovid" class="mm-links d-block">COVID-19 Report</a></li>
+                
+                
+
+                
+                
+
+
+                <li><a onclick="myFunction()" class="dropbtn mm-links d-block">Events</a>
+                    <div class="dropdown">
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="/availableservices">View Services</a>
+                        <hr>
+                        <a href="/bookservice">Book Service</a>
+                        <hr>
+                        <a href="/bookedservice">Booked Service</a> 
+                        </div>>
+                    </div>
+                </li>
+                    <li><a href="/">Home</a></li>
+
+            </ul>
+        </header>
+        	<!--Automatic slider order-->
+
+    </section>
+    
+  <!--content start-->
+  <div class="content">
+    <br><br><br><br>
+    {% block content %}
+
+    {% endblock content %}
+
+
+    <br><br><br>
+ 
+  </div>
+  <!--content end-->
+
+  <script>function MemberLogout() {alert("You Successfully Log Out. God Bless.");}</script>
+  <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    </script>
+</body>
+</html>

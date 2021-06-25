@@ -1,0 +1,69 @@
+{% extends 'adminbase.html' %}
+{% block content %}
+{%load static%}
+<br><br>
+<div class="container">
+    <H4 class="text-center">MEMBER DETAILS</H4><br>
+    <form class="form-inline" action="create" method="POST" style="border:none;">
+        {% csrf_token %}
+    <div class="form-group">
+        <label for="fullname">Name</label>
+        <input type="text" name="fullname" id="fullname" class="form-control" style="width: 20%;" required="required"/>
+        <label for="fullname">Address</label>
+        <input type="text" name="address" id="address" class="form-control" style="width: 40%;" required="required"/>
+        <label for="fullname">Mobile</label>
+        <input type="text" name="mobile" id="address" class="form-control" style="width: 15%;" required="required"/>
+        <button class="btn btn-danger badge-pill" style="width: 60px;"><a  style="text-decoration: none;color: white;">ADD</a></button><br>
+        <label for="profile_pic">Profile Picture</label>
+        <input type="file" id="profile_pic" class="form-control" name="profile_pic" >
+        <label for="fullname">Email</label>
+        <input type="text" name="email" id="email" class="form-control" style="width: 15%;" required="required"/>
+        <label for="fullname">Username</label>
+        <input type="text" name="user" id="user" class="form-control" style="width: 15%;" required="required"/>
+        <label for="fullname">Password</label>
+        <input type="text" name="password" id="password" class="form-control" style="width: 15%;" required="required"/>
+        <br><br><br>
+
+    </td>
+    </div>
+    </form>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Username</th>
+                <th scope="col">Profile</th>               
+                <th scope="col">Address</th>
+                <th scope="col">Mobile</th>
+                <th scope="col">Email</th>
+                <th class="text-right">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for t in members %}
+            <tr>
+                <td> {{t.fullname}}</td>
+                <td>{{t.user}}</td>
+                <td> <img src="{% static t.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>             
+                <td>{{t.address}}</td>
+                <td>{{t.mobile}}</td>
+                <td>{{t.email}}</td>
+                <td class="text-right" style="float: center;">
+                   
+                    <button class="btn btn-danger badge-pill" style="width: 80px;"><a  style="text-decoration: none;color: white;" href="{% url 'delete-member' t.id  %}">DELETE</a> </button>
+                </td>
+
+                <td class="text-right" style="float:left;">
+                    <button class="btn btn-danger badge-pill" style="width: 80px;"><a  style="text-decoration: none;color: white;" href="{% url 'delete-donation' t.id  %}">EDIT</a> </button>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    
+    </table>
+</div>
+
+
+{% endblock content %}

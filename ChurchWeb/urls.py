@@ -1,17 +1,50 @@
-"""ChurchWeb URL Configuration
+from django.contrib import admin
+from church import views
+from django.contrib.auth.views import LogoutView,LoginView
+from django.urls import path,include
+from django.conf.urls import url
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',views.home_view,name=''),
+    path('logout', LogoutView.as_view(template_name='index.html'),name='logout'),
+    path('aboutus', views.aboutus_view),
+    path('usersignup', views.devotee_signup_view,name='usersignup'),
+    path('userlogin', LoginView.as_view(template_name='userlogin.html'),name='userlogin'),
+    path('adminlogin', LoginView.as_view(template_name='adminlogin.html'),name='adminlogin'),
+    path('afterlogin', views.afterlogin_view,name='afterlogin'),
+    path('devotee-dashboard', views.devotee_dashboard_view,name='devotee-dashboard'),
+    path('availableservices', views.availableservices_view,name='availableservices'),
+    path('bookservice', views.bookservice_view,name='bookservice'),
+    path('bookservicesunday', views.bookservicesunday_view,name='bookservicesunday'),
+    path('choose-seat', views.chooseseat_view,name='choose-seat'),
+    path('finalbook', views.finalbook_view,name='finalbook'),
+    path('downloadticket', views.download_ticket_view,name='downloadticket'),
+    path('bookedservice', views.bookedservice_view,name='bookedservice'),
+    #path('delete-bookedservice', views.delete_bookedservice_view,name='delete-bookedservice'),
+    path('member-download-ticket/<int:pk>', views.member_download_ticket_view,name='member-download-ticket'),
+    path('bookbiblestudy', views.bookbiblestudy_view,name='bookbiblestudy'),
+    path('trackcovid', views.trackcovid_view,name='trackcovid'),
+    path('submitreport', views.submitreport_view,name='submitreport'),
+    path('viewreport', views.viewreport_view,name='viewreport'),
+    path('testimonial', views.testimonial_view,name='testimonial'),
+    path('myprofile', views.myprofile_view,name='myprofile'),
+    path('edit-myprofile', views.edit_myprofile_view,name='edit-myprofile'),
+    path('donate', views.donate_view,name='donate'),
+    path('contactus', views.contactus_view,name='contactus'),
+    path('admin-dashboard', views.admin_dashboard_view,name='admin-dashboard'),
+    path('viewbookedservice', views.viewbookedservice_view,name='viewbookedservice'),
+    path('delete-adminbooking/<int:pk>', views.delete_adminbooking_view,name='delete-adminbooking'),
+    #path('edit-adminbooking', views.edit_adminbooking_view,name='edit-adminbooking'),
+    path('member', views.member_view,name='member'),
+    url(r'^create$', views.create_member_view, name='create'),
+    path('delete-member/<int:pk>', views.delete_member_view,name='delete-member'),
+    path('viewtestimonial', views.viewtestimonial_view,name='viewtestimonial'),
+    path('delete-testimonial/<int:pk>', views.deletetestimonial_view,name='delete-testimonial'),
+    path('viewdonation', views.viewdonation_view,name='viewdonation'),
+    path('delete-donation/<int:pk>', views.deletedonation_view,name='delete-donation'),
+]
+
 """
 from django.contrib import admin
 from django.urls import path, include
@@ -63,7 +96,5 @@ urlpatterns = [
     path('admin_member',index.admin_memberpage,name='admin_memberpage'),
     path('admin_testimonial',index.admin_testimonialpage,name='admin_testimonialpage'),
 ]
-
-
-
 #] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+"""
